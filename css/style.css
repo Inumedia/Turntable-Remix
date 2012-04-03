@@ -250,6 +250,11 @@ body .loading li:nth-child(n+2) {
   top: auto !important;
   width: 600px;
   z-index: 3;
+  opacity: .5;
+  -webkit-transition: opacity .5s linear;
+}
+#maindiv #outer .roomView #right-panel .chat-container:hover{
+	opacity: initial;
 }
 #maindiv #outer .roomView #right-panel .chat-container .chatHeader {
   border-radius: 4px 4px 0px 0px;

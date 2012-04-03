@@ -14,7 +14,8 @@
       "http://turntable.fm/privacy", 
       "http://turntable.fm/copyright", 
       "http://turntable.fm/terms", 
-      "http://turntable.fm/static/*"
+      "http://turntable.fm/static/*",
+      "http://turntable.fm/contest_rules"
     ],
     "js": ["js/inject.js"],
     "run_at": "document_end"
