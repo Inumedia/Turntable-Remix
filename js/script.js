@@ -1,4 +1,4 @@
-(function(window, undefined) {
+(function(window) {
   //var $this;
   versionCheck = function(a) {
     if (a.version!=$this.version) {
@@ -65,13 +65,24 @@
       this.now = now;
       delete now;
     
-      $('<img src="http://i.imgur.com/BfJU2.png" id="konami">').css({position: 'absolute', left: '50%', marginLeft: '-300px', bottom: '-244px', width: '300px', zIndex: 2}).appendTo('#right-panel');
+      /*$('<img src="http://i.imgur.com/BfJU2.png" id="konami">').css({position: 'absolute', left: '50%', marginLeft: '-300px', bottom: '-244px', width: '300px', zIndex: 2}).appendTo('#right-panel');
       var konami = new Konami();
       konami.code = function() {
         $('#konami').animate({bottom: '200px'}, 1000, function(){ setTimeout(function(a) { a.animate({bottom: '-244px'}, 5000) }, 2000, $(this)) })
       }
-      konami.load();
-    
+      konami.load();*/
+      var sGotIdleTime = false; 
+	  var sClock = null; 
+	  for(var sVar in turntable) { 
+	 	  if(sGotIdleTime){ 
+			  sClock = sVar; 
+			  console.log(sClock);
+			  eval("turntable."+sClock+" = function(){return 0;}");
+			  break;
+		  }  
+		  sGotIdleTime = sVar == "idleTime" 
+	  }
+      
       // Add missing speaker states? (see speaker.states)
       speaker.states.on.push(['lspeaker2',0,0]);
       speaker.states.on.push(['lspeaker3',0,0]);
