@@ -1,7 +1,8 @@
 {
   "name": "Turntable.fm Remix",
   "version": "0.1.5",
-  "description": " turntable.fm",
+  "description": "A custom interface for turntable.fm",
+  "update_url": "https://dl.dropbox.com/s/jzd7aj69iojxi7f/update.xml",
   "content_scripts": [
     {
     "matches": ["http://turntable.fm/*"],
