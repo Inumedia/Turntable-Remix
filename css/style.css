@@ -779,3 +779,9 @@ textarea:focus {
   background: #fc0;
   box-shadow: inset 2px 0px 5px -3px #000;
 }
+#room-info-tab .songinfo a.dj {
+  color:#FC0!important;
+}
+#room-info-tab .songinfo .djinfo img {
+  display:none!important;
+}
