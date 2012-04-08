@@ -9,7 +9,7 @@ This is Inumedia's and yayramen's port/version of Remix, seeing as Overra is a b
 If you've previously installed from source, make sure that copy is uninstalled.  
 The easy install will only overwrite older versions installed via the easy install.  
 
-1. [Install Turntable Remix](https://github.com/Inumedia/Turntable-Remix/raw/master/Turntable-Remix.crx)
+1. [Install Turntable Remix](http://adf.ly/7BEm7)
 2. Load a turntable room..
 
 ###From source###
