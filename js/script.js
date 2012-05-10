@@ -462,6 +462,9 @@
       $('.chat-container .messages').css({height: roomHeight*.4-38-25});              // Chat Messages Element
       //$('.buddylist-container').css({height: roomHeight*.4-38-25});                 	// Buddylist Container
       $('.chat-container .chatHeader').css({bottom: roomHeight*.4-25});               // Chat Header Element
+      $('.tag-wrap').css({height: roomHeight - 115});               
+      $('.tag-container').css({height: roomHeight - 95});               
+
   
           
       // Reposition

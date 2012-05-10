@@ -35,7 +35,7 @@ $.when(
 ).then(function(){
   remixLog('reset.js loaded..')
   $.when(
-    loadJavascript('now', 'now', {url: 'http://turntableremix.com:3010/nowjs/'})
+    loadJavascript('now', 'now')
   ).then(function() {
     remixLog('now.js loaded..')
     $.when(
