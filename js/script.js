@@ -167,8 +167,6 @@
 
       if (this.currentSong) { var hasVoted = this.currentSong.get('hasVoted'); }
       if (hasVoted) { $('#'+hasVoted+'votes').addClass('active'); }
-      
-      
   		// Creating Panel Buttons UI Tree
   		var panelButtons = [
   		  'ul.panelButtons', 
@@ -177,7 +175,7 @@
   		    $(this).addClass('active');
   		    $('.panel.active').removeClass('active'); 
   		    $('.playlist-container').addClass('active'); 
-  		  } } }, 'Playlist'],
+  		  } } }, 'Queue'],
   		  ['li.recentSongs', {event: {click: function(){ 
   		    $(this).siblings().removeClass('active'); 
   		    $(this).addClass('active');
@@ -189,19 +187,43 @@
   		    $(this).addClass('active');
   		    $('.panel.active').removeClass('active'); 
   		    $('.guest-list-container').addClass('active'); 
-  		  } } }, 'Listeners'],
+  		  } } }, 'Users'],
   		  ['li.activityLog', {event: {click: function(){ 
   		    $(this).siblings().removeClass('active'); 
   		    $(this).addClass('active');
   		    $('.panel.active').removeClass('active'); 
   		    $('.activity-log-container').addClass('active'); 
   		  } } }, 'Log'],
-  		  ['li.settings', {event: {click: function(){ 
-  		    $(this).siblings().removeClass('active'); 
-  		    $(this).addClass('active');
-  		    $('.panel.active').removeClass('active'); 
-  		    $('.settings-container').addClass('active'); 
-  		  } } }, 'Settings'],
+        ['li.settings', {event: {click: function(){ 
+          $(this).siblings().removeClass('active'); 
+          $(this).addClass('active');
+          $('.panel.active').removeClass('active'); 
+          $('.settings-container').addClass('active'); 
+        } } }, 'Settings'],
+  		  ['li.closeMe', {event: {click: function(){ 
+  		    if ($('.closeMe').hasClass('on')) {
+            $('.closeMe').removeClass('on');
+            $('#maindiv #outer .roomView #right-panel .info-container').show();
+            $('.settings, .activityLog, .guestList, .recentSongs, .myQueue').show();
+            $('.playlist-container, li.myQueue').addClass('active'); 
+                    window.resizeTimer = setTimeout(function(a,b) {
+          if (a.height()==$(window).height()&&a.width()==$(window).width()) {
+            b.resize();
+          }
+        }, 50, $(window), $this)
+          } else {
+            $('.closeMe').addClass('on');
+            $('#maindiv #outer .roomView #right-panel .info-container').hide();
+            $('.settings, .activityLog, .guestList, .recentSongs, .myQueue').hide();
+            $(this).siblings().removeClass('active'); 
+            $('.panel.active').removeClass('active');
+                    window.resizeTimer = setTimeout(function(a,b) {
+          if (a.height()==$(window).height()&&a.width()==$(window).width()) {
+            b.resize();
+          }
+        }, 50, $(window), $this)
+          };
+  		  } } }, '^'],
   		];
   		$('.bottom-bar').append(util.buildTree(panelButtons));
   		
@@ -440,6 +462,7 @@
           width = $(window).width(),
           roomWidth = this.roomWidth = width - 300,
           roomHeight = this.roomHeight = height - 60;
+          if ($('.closeMe').hasClass('on')) roomWidth = this.roomWidth = width;
       
       // Resize
       $('#right-panel').css({height: roomHeight })                      // Right Panel
@@ -786,4 +809,4 @@
     });
     return b.promise();
   }
-})(window)
+})(window);
