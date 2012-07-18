@@ -498,11 +498,18 @@
       $('.roomTip').css({left: (roomWidth-408)/2});                     // Room Tip
       
       // Redefine room floor rects
-      tt.room.manager.floorRects = [
+      /*tt.room.manager.floorRects = [
         { rect: [Math.round(roomWidth*.1), 245, Math.round(roomWidth*.2), 100], weight: .2 }, 
         { rect: [Math.round(roomWidth*.3), 295, Math.round(roomWidth*.4), 50], weight: .6 }, 
         { rect: [Math.round(roomWidth*.7), 245, Math.round(roomWidth*.2), 100], weight: .2 }
-      ];
+      ];*/
+
+      tt.room.manager.floorRect.width = roomWidth-20;
+      tt.room.manager.floorRect.height = roomHeight-39-150;
+      $('#floor-div canvas').attr('id', 'rxcanvas');
+      var canvasing = document.getElementById('rxcanvas');
+      canvasing.width = roomWidth;
+      canvasing.height = roomHeight-10-68-39-150 ;
       
   		// Remove and replace avatars
   		for (i in tt.room.users) {                            
