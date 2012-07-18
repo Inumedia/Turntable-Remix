@@ -564,7 +564,12 @@
   				tt.room.manager.update_vote(tt.room.users[tt.room.djIds[i]], 'up');
   			}
   		}
-  		// Reset Current DJ
+
+      //Hide Vote Buttons
+      $('a[style*="position: absolute; left: 154px; top: 555px; z-index: 10001;"]').hide();
+      $('a[style*="position: absolute; left: 370px; top: 555px; z-index: 10001;"]').hide();
+  		
+      // Reset Current DJ
   		tt.room.manager.stop_active_dj();
   		tt.room.manager.set_active_dj(tt.room.djIds.indexOf(tt.room.currentDj))	
   		
