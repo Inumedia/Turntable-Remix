@@ -1,7 +1,7 @@
 {
   "name": "Turntable.fm Remix",
-  "version": "0.2.2.1",
-  "description": "A custom interface for turntable.fm",
+  "version": "0.2.2.2",
+  "description": " turntable.fm",
   "update_url": "https://dl.dropbox.com/s/jzd7aj69iojxi7f/update.xml",
   "content_scripts": [
     {
@@ -14,8 +14,7 @@
       "http://turntable.fm/privacy", 
       "http://turntable.fm/copyright", 
       "http://turntable.fm/terms", 
-      "http://turntable.fm/static/*",
-      "http://turntable.fm/contest_rules"
+      "http://turntable.fm/static/*"
     ],
     "js": ["js/inject.js"],
     "run_at": "document_end"
