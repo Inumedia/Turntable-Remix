@@ -1,24 +1,11 @@
 #Turntable Remix#
-Turntable Remix is currently only available for Chrome, however a port to Firefox has been planned.
+Turntable Remix is a Chrome Extension for [Turntable.fm](http://turntable.fm)
 
-This is Inumedia's and yayramen's port/version of Remix, seeing as Overra is a bit preoccupied at the moment.
+Until this release it ready to be packed you will need to follow these steps to install remix.
 
-##Installation##
-
-###Easy install###
-If you've previously installed from source, make sure that copy is uninstalled.  
-The easy install will only overwrite older versions installed via the easy install.  
-
-1. [Install Turntable Remix](http://adf.ly/7BEm7)
-2. Load a turntable room..
-
-###From source###
-1. Download the latest [zip](https://github.com/Inumedia/Turntable-Remix/zipball/master) or [tar.gz](https://github.com/Inumedia/Turntable-Remix/tarball/master) and extract
-2. Enter chrome://extensions in your address bar
-3. Enable Developer mode
-4. Load the folder containing manifest.json
-5. Load a turntable room..
-
-
-##Latest Screenshot##
-![Latest Screenshot](http://i.imgur.com/zxQ6k.jpg)
+* Download and unzip [Turntable Remix 0.2.0](https://github.com/overra/Turntable-Remix/zipball/0.2.0)
+* Go to the Chrome Extensions page at chrome://extensions
+* If you're using an older version of remix you'll need to disable it.
+* Make sure the "Developer mode" checkbox is checked.
+* Click "Load unpacked extension..", locate and select the unzipped folder.
+* Refresh turntable 
