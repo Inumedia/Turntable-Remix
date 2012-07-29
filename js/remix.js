@@ -1,5 +1,5 @@
 (function ($, window, undefined) {
-    
+
     define(['require', 'underscore', 'backbone'], function (require, _, Backbone) {
         var Room,
             Songs,
@@ -16,6 +16,25 @@
             if (util.getSetting('autoAwesome')===null) { 
                 util.setSetting('autoAwesome', 'off'); 
             }
+            /**RAMEN**/
+            function ReSize() {
+                var rHeight = $(window).height();
+                $('.tag-wrap').css({height:rHeight - 375});
+                $('.tag-container').css({height:rHeight - 375});
+            };
+            $(window).resize(function() {
+                setTimeout(ReSize(), 100);
+            });
+            setTimeout(function(){
+                ReSize();
+                $('.chat-container').animate({"opacity": 0.3});
+                $('.chat-container .chatBar .input-box input').focus(function () {
+                    $('.chat-container').animate({"opacity": 1});
+                }).blur(function () {
+                    $('.chat-container').animate({"opacity": 0.3});
+                });
+            }, 2000);
+            /**ENDRAMEN**/
             
             var keys = Object.keys(turntable);
             turntable.api = turntable[keys[keys.indexOf('getHashedAddr') + 1]];

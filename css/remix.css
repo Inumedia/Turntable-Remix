@@ -799,7 +799,13 @@ body {
 .toggle  + label {
   line-height: 26px;
   margin-left: 10px;
+  /** RAMEN
   position: absolute;
+  **/
+  display:inline-block;
+  vertical-align: top;
+  margin-bottom: 10px;
+  /**ENDRAMEN**/
 }
 .rock {
   -webkit-animation: rock 2000ms infinite;
@@ -821,4 +827,54 @@ body {
   100% {
     -webkit-transform: rotate(0deg);
   }
+}
+/**RAMEN**/
+#tfmExtended {
+  top: 10px!important;
+  left: -1px!important;
+  margin-left: 0px!important;
+  z-index: 10!important;
+}
+#playlist .song .tag {
+  right: 4px!important;
+  bottom: 3px!important;
+}
+.tag-wrap {
+  background-color:rgba(0,0,0,0.5)!important;
+  color:#fff!important;
+  border-bottom: 1px solid #444!important;
+  border-right: 1px solid #444!important;
+  padding: 5px 0px 5px 10px !important;
+}
+.tag-wrap .tag-active {
+  background-color: rgba(255, 255, 255, 0.1)!important;
+  margin-left:-10px!important;
+  padding-left:10px!important;
+}
+.tag .black-right-header {
+  border-top: 1px solid #444!important;
+  border-right: 1px solid #444!important;
+  background: -webkit-linear-gradient(rgba(255,255,255,0.10), rgba(255,255,255,0.00)) #202020 !important;
+  border-radius: 0px 4px 0px 0px !important;
+  box-shadow: inset 0px 1px rgba(255,255,255,0.10), inset 0px -1px rgba(0,0,0,0.10) !important;
+}
+.black-right-header .header-text {
+  font-weight:100!important;
+}
+.tag-container .closeTags {
+  text-indent:-9999px !important;
+  background: url("https://s3.amazonaws.com/static.turntable.fm/images/index/connect_x_sprite.png") 0px -13px no-repeat !important;
+  height: 13px !important;
+  top: 5px !important;
+  display: block!important;
+}
+.tag-container .openTags {
+  background: -webkit-linear-gradient(right, rgba(255,255,255,0.10) 0%, rgba(255,255,255,0.00) 100%) #202020 !important;
+  background: -webkit-linear-gradient(right , rgba(255,255,255,0.10), rgba(255,255,255,0.00) 100%) #202020 !important;
+  box-shadow: inset -1px 0px rgba(255,255,255,0.10), inset 0px -1px rgba(0,0,0,0.10) !important;
+  opacity: .5;
+  -webkit-transition: opacity .2s linear;
+}
+.tag-container .openTags:hover {
+  opacity: initial;
 }

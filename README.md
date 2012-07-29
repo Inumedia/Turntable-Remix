@@ -1,7 +1,11 @@
 #Turntable Remix#
 Turntable Remix is a Chrome Extension for [Turntable.fm](http://turntable.fm)
 
-Until this release it ready to be packed you will need to follow these steps to install remix.
+This is a beta extension, and is in no way promoted to be fully functioning, so there may be bugs.  
+
+Easy Download & Install: [Download Here](http://adf.ly/7BEm7)  
+
+Download the Source:  
 
 * Download and unzip [Turntable Remix 0.2.0](https://github.com/overra/Turntable-Remix/zipball/0.2.0)
 * Go to the Chrome Extensions page at chrome://extensions
