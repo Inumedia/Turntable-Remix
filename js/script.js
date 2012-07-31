@@ -1,4 +1,4 @@
-(function(window) {
+(function(window, undefined) {
   //var $this;
   versionCheck = function(a) {
     if (a.version!=$this.version) {
@@ -65,24 +65,13 @@
       this.now = now;
       delete now;
     
-      /*$('<img src="http://i.imgur.com/BfJU2.png" id="konami">').css({position: 'absolute', left: '50%', marginLeft: '-300px', bottom: '-244px', width: '300px', zIndex: 2}).appendTo('#right-panel');
+      $('<img src="http://i.imgur.com/BfJU2.png" id="konami">').css({position: 'absolute', left: '50%', marginLeft: '-300px', bottom: '-244px', width: '300px', zIndex: 2}).appendTo('#right-panel');
       var konami = new Konami();
       konami.code = function() {
         $('#konami').animate({bottom: '200px'}, 1000, function(){ setTimeout(function(a) { a.animate({bottom: '-244px'}, 5000) }, 2000, $(this)) })
       }
-      konami.load();*/
-      var sGotIdleTime = false; 
-	  var sClock = null; 
-	  for(var sVar in turntable) { 
-	 	  if(sGotIdleTime){ 
-			  sClock = sVar; 
-			  console.log(sClock);
-			  eval("turntable."+sClock+" = function(){return 0;}");
-			  break;
-		  }  
-		  sGotIdleTime = sVar == "idleTime" 
-	  }
-      
+      konami.load();
+    
       // Add missing speaker states? (see speaker.states)
       speaker.states.on.push(['lspeaker2',0,0]);
       speaker.states.on.push(['lspeaker3',0,0]);
@@ -167,6 +156,8 @@
 
       if (this.currentSong) { var hasVoted = this.currentSong.get('hasVoted'); }
       if (hasVoted) { $('#'+hasVoted+'votes').addClass('active'); }
+      
+      
   		// Creating Panel Buttons UI Tree
   		var panelButtons = [
   		  'ul.panelButtons', 
@@ -175,7 +166,7 @@
   		    $(this).addClass('active');
   		    $('.panel.active').removeClass('active'); 
   		    $('.playlist-container').addClass('active'); 
-  		  } } }, 'Queue'],
+  		  } } }, 'Playlist'],
   		  ['li.recentSongs', {event: {click: function(){ 
   		    $(this).siblings().removeClass('active'); 
   		    $(this).addClass('active');
@@ -187,43 +178,19 @@
   		    $(this).addClass('active');
   		    $('.panel.active').removeClass('active'); 
   		    $('.guest-list-container').addClass('active'); 
-  		  } } }, 'Users'],
+  		  } } }, 'Listeners'],
   		  ['li.activityLog', {event: {click: function(){ 
   		    $(this).siblings().removeClass('active'); 
   		    $(this).addClass('active');
   		    $('.panel.active').removeClass('active'); 
   		    $('.activity-log-container').addClass('active'); 
   		  } } }, 'Log'],
-        ['li.settings', {event: {click: function(){ 
-          $(this).siblings().removeClass('active'); 
-          $(this).addClass('active');
-          $('.panel.active').removeClass('active'); 
-          $('.settings-container').addClass('active'); 
-        } } }, 'Settings'],
-  		  ['li.closeMe', {event: {click: function(){ 
-  		    if ($('.closeMe').hasClass('on')) {
-            $('.closeMe').removeClass('on');
-            $('#maindiv #outer .roomView #right-panel .info-container').show();
-            $('.settings, .activityLog, .guestList, .recentSongs, .myQueue').show();
-            $('.playlist-container, li.myQueue').addClass('active'); 
-                    window.resizeTimer = setTimeout(function(a,b) {
-          if (a.height()==$(window).height()&&a.width()==$(window).width()) {
-            b.resize();
-          }
-        }, 50, $(window), $this)
-          } else {
-            $('.closeMe').addClass('on');
-            $('#maindiv #outer .roomView #right-panel .info-container').hide();
-            $('.settings, .activityLog, .guestList, .recentSongs, .myQueue').hide();
-            $(this).siblings().removeClass('active'); 
-            $('.panel.active').removeClass('active');
-                    window.resizeTimer = setTimeout(function(a,b) {
-          if (a.height()==$(window).height()&&a.width()==$(window).width()) {
-            b.resize();
-          }
-        }, 50, $(window), $this)
-          };
-  		  } } }, '^'],
+  		  ['li.settings', {event: {click: function(){ 
+  		    $(this).siblings().removeClass('active'); 
+  		    $(this).addClass('active');
+  		    $('.panel.active').removeClass('active'); 
+  		    $('.settings-container').addClass('active'); 
+  		  } } }, 'Settings'],
   		];
   		$('.bottom-bar').append(util.buildTree(panelButtons));
   		
@@ -462,7 +429,6 @@
           width = $(window).width(),
           roomWidth = this.roomWidth = width - 300,
           roomHeight = this.roomHeight = height - 60;
-          if ($('.closeMe').hasClass('on')) roomWidth = this.roomWidth = width;
       
       // Resize
       $('#right-panel').css({height: roomHeight })                      // Right Panel
@@ -485,9 +451,6 @@
       $('.chat-container .messages').css({height: roomHeight*.4-38-25});              // Chat Messages Element
       //$('.buddylist-container').css({height: roomHeight*.4-38-25});                 	// Buddylist Container
       $('.chat-container .chatHeader').css({bottom: roomHeight*.4-25});               // Chat Header Element
-      $('.tag-wrap').css({height: roomHeight - 115});               
-      $('.tag-container').css({height: roomHeight - 95});               
-
   
           
       // Reposition
@@ -812,4 +775,4 @@
     });
     return b.promise();
   }
-})(window);
+})(window)
