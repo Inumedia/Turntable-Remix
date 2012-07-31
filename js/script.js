@@ -657,6 +657,9 @@
           bitrate: (currentSong.bitrate||128)+'kbps'
         })
       },
+      pmmed: function(a) {
+        //alert('omg it called it!');
+      },
       registered: function(a) {
         var users = b.user;
         for (i in users) {
