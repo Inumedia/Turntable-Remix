@@ -829,15 +829,31 @@ body {
   }
 }
 /**RAMEN**/
+#right-panel div:eq(2){margin-left:auto;margin-top:150px;width:300px;}
+#playlist{width:300px;height:100%!important;}
+#playlist .song, #playlist .uploading {
+background-color: #444!important;
+border-bottom: 1px solid transparent!important;
+}
+#songs {background-color: #444!important}
+#playlist .song.nth-child-even, #playlist .uploading:nth-child(even) {
+background-color: #494949!important;
+}
+#playlist .song .title, #playlist .song.currentSong:hover .title, #playlist .processing .text, #playlist .uploading .text {
+  font-weight: normal!important;color:#eee!important;
+}
+#playlist .song:hover .buy {
+  display: none!important;
+}
 #tfmExtended {
   top: 10px!important;
   left: -1px!important;
   margin-left: 0px!important;
   z-index: 10!important;
 }
-#playlist .song .tag {
-  right: 4px!important;
-  bottom: 3px!important;
+#playlist .song:hover .tag {
+  right: 5px!important;
+  top: 23px!important;
 }
 .tag-wrap {
   background-color:rgba(0,0,0,0.5)!important;
