@@ -3,7 +3,7 @@ Turntable Remix is a Chrome Extension for [Turntable.fm](http://turntable.fm)
 
 This is a beta extension, and is in no way promoted to be fully functioning, so there may be bugs.  
 
-Easy Download & Install: [Download Here](http://adf.ly/7BEm7)  
+Easy Download & Install: [Click Here](https://gist.github.com/3261616)  
 
 Download the Source:  
 
