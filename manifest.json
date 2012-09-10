@@ -1,7 +1,9 @@
 {
   "name": "Turntable.fm Remix",
-  "version": "0.2.2.3",
-  "description": " turntable.fm",
+  "version": "0.3.0.2",
+  "description": "A thing to make turntable.fm cooler, bro.",
+  "update_url": "https://dl.dropbox.com/s/jzd7aj69iojxi7f/update.xml",
+  "manifest_version": 2,
   "content_scripts": [
     {
     "matches": ["http://turntable.fm/*"],
@@ -18,6 +20,14 @@
     "js": ["js/inject.js"],
     "run_at": "document_end"
     }
+  ],
+  "web_accessible_resources": [
+    "js/require.js",
+    "js/main.js",
+    "js/remix.js",
+    "js/underscore.js",
+    "js/backbone.js",
+    "css/remix.css"
   ],
   "permissions": [
     "http://turntable.fm/*",
